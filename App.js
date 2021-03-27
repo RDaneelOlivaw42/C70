@@ -7,17 +7,25 @@ import TransactionScreen from "./screens/BookTransactionScreen";
 import SearchScreen from "./screens/SearchScreen";
 
 export default class App extends React.Component {
+
   render() {
-    return <AppContainer />;
+    return (
+    <AppContainer />
+    );
   }
-}
+
+};
+
 
 const TabNavigator = createBottomTabNavigator({
+
   Transaction: { screen: TransactionScreen },
   Search: { screen: SearchScreen }
+
 });
 
 const AppContainer = createAppContainer(TabNavigator);
+
 
 const styles = StyleSheet.create({
   container: {
