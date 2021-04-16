@@ -17,11 +17,11 @@ export default class App extends React.Component {
 };
 
 
-const TabNavigator = createBottomTabNavigator({
-
+const TabNavigator = createBottomTabNavigator(
+  
+{
   Transaction: { screen: TransactionScreen },
   Search: { screen: SearchScreen }
-
 },
 
 {
@@ -47,10 +47,9 @@ const TabNavigator = createBottomTabNavigator({
           />
         )
       };
-
     }
-
   })
+
 }
 
 );

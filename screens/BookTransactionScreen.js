@@ -32,6 +32,7 @@ export default class TransactionScreen extends React.Component {
     });
   };
 
+
 //why need buttonState 'clicked'?
   handleBarcodeScanned = async ({type, data})=>{
     this.setState({
@@ -60,23 +61,24 @@ export default class TransactionScreen extends React.Component {
     else if(buttonState === "normal"){
       return (
           <View style = {styles.container}>
+
             <View>
               <Image 
                 source = {require("../assets/booklogo.jpg")}
                 style = {{width: 200, height: 200}}
               />
-              <Text style = {{textAlign: "center", fontSize: 30}}>Wily</Text>
+              <Text style = {{textAlign: "center", fontSize: 30}}>WILY</Text>
             </View>
   
             <View style = {styles.inputView}>
               <TextInput 
-                style = {styles.inputBox}
-                placeholder = "Book ID"
-                value = {this.state.scannedBookID}
+                  style = {styles.inputBox}
+                  placeholder = "Book ID"
+                  value = {this.state.scannedBookID}
               />
               <TouchableOpacity 
-              style = {styles.scanButton}
-              onPress = {()=>{
+                style = {styles.scanButton}
+                onPress = {()=>{
                 this.getCameraPermissions("Book ID")
               }}>
                 <Text style = {styles.buttonText}>Scan</Text>
@@ -85,27 +87,18 @@ export default class TransactionScreen extends React.Component {
 
             <View style = {styles.inputView}>
               <TextInput 
-                style = {styles.inputBox}
-                placeholder = "Student ID"
-                value = {this.state.scannedStudentID}
+                  style = {styles.inputBox}
+                  placeholder = "Student ID"
+                  value = {this.state.scannedStudentID}
               />
               <TouchableOpacity 
-                style = {styles.scanButton}
-                onPress = {()=>{
+                  style = {styles.scanButton}
+                  onPress = {()=>{
                   this.getCameraPermissions("Student ID")
                 }}>
                   <Text style = {styles.buttonText}>Scan</Text>
               </TouchableOpacity>
             </View>
-
-            <Text style = {styles.displayText}>
-              {hasCameraPermissions === true?
-              this.state.scannedData: "request Camera Permission"}
-            </Text>
-
-            <TouchableOpacity style = {styles.scanButton} onPress = {()=>{this.getCameraPermissions("Book ID")}}>
-              <Text style = {styles.buttonText}>Scan QR Code</Text>
-            </TouchableOpacity>
   
           </View>
         );
@@ -131,11 +124,12 @@ const styles = StyleSheet.create({
   },
 
   scanButton: {
-    backgroundColor: '#2196F3',
+    backgroundColor: '#60BFB7',
     borderWidth: 1.5,
     borderLeftWidth: 0,
     width: 50,
-    justifyContent: "center"
+    justifyContent: "center",
+    textAlign: 'center'
   },
 
   buttonText: {
